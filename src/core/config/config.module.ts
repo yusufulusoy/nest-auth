@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule as NestConfigModule } from '@nestjs/config';
-import appConfig from '../app.config';
-import databaseConfig from '../database/database.config';
-import redisConfig from '../redis/redis.config';
+import appConfig from '@/app.config';
+import databaseConfig from '@/core/database/database.config';
+import redisConfig from '@/core/redis/redis.config';
+import graphqlConfig from '@/core/graphql/graphql.config';
 import { validate } from './config.validation';
-import graphqlConfig from '../graphql/graphql.config';
 
 @Module({
   imports: [
