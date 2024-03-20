@@ -4,6 +4,7 @@ import appConfig from '@/app.config';
 import databaseConfig from '@/core/database/database.config';
 import redisConfig from '@/core/redis/redis.config';
 import graphqlConfig from '@/core/graphql/graphql.config';
+import authConfig from '@/auth/auth.config';
 import { validate } from './config.validation';
 
 @Module({
@@ -11,7 +12,7 @@ import { validate } from './config.validation';
     NestConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ['.env', '.env.development'],
-      load: [appConfig, databaseConfig, redisConfig, graphqlConfig],
+      load: [appConfig, databaseConfig, redisConfig, graphqlConfig, authConfig],
       validate,
     }),
   ],
